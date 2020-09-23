@@ -12,3 +12,5 @@ function solution(key, lock) {
 solution(key, lock)
 
 // lock의 배열중 1이 없을 경우 리턴
+
+// 1. key의 M*M의 마지막 배열의 값을 Lock의 첫번째 값이랑 더한 후 lock의 모든 배열에 1이 있는지 없는지 확인.
