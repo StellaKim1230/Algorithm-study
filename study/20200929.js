@@ -3,8 +3,14 @@ const key = [[0, 0, 0], [1, 0, 0], [0, 1, 1]]
 const lock = [[1, 1, 1], [1, 1, 0], [1, 0, 1]]
 
 function solution(key, lock) {
-  lock[0,0][0] = key[key.length -1, key.length -1][key.length - 1] + lock[0,0][0]
-  console.log(lock)
+  const background = new Array(lock.length + (key.length -1) * 2)
+
+  // 처음 lock 위치
+  background[key.length -1, key.length -1] = lock[0,0][0]
+  console.log('background', background[2,2])
+  
+
+  // lock[0,0][0] = key[key.length -1, key.length -1][key.length - 1] + lock[0,0][0]
   var answer = true;
   return answer;
 }
