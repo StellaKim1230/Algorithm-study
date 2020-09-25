@@ -19,20 +19,9 @@ function solution(key, lock) { // key <= lock
   // 백그라운드 배열 생성
   const background = Array.from(Array(len * 3), () => Array(len * 3).fill(null));
   // 백그라운드 가운데에 lock 세팅
-
   for (let i = len; i < len * 2; i++) {
     for (let j = len; j <len * 2; j++) {
-      console.log(i - len, len*2 - len)
-      // background[3, 3] = lock[i - lock.len, len * 2 - lock.len]
-      // background[3, 4] = lock[0, 1]
-      // background[3, 5] = lock[0, 2]
-      // background[4, 3] = lock[1, 0]
-      // background[4, 4] = lock[1, 1]
-      // background[4, 5] = lock[1, 2]
-      // background[5, 3] = lock[2, 0]
-      // background[5, 4] = lock[2, 1]
-      // background[5, 5] = lock[2, 2]
-      // console.log(i, j, i - lock.len, len * 2 - lock.len)
+      background[i, j] = lock[i - len, j - len]
     } 
   }
 
