@@ -1,3 +1,4 @@
+// 가장 가까운 노드 찾기
 function solution(n, edge) {
   const queue = [1]
 
@@ -26,7 +27,5 @@ function solution(n, edge) {
 // 4: 2, 3
 // 5: 2
 
-
 // queue
 // queue : 2, 3, 1, 3, 4, 5, 1, 2, 4, 6, 2, 3, 2
-
