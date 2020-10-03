@@ -21,11 +21,9 @@ def solution(begin, target, words):
                 if visited[i] != 0:
                     continue
                 else:
-                    if len(convert_deque) > 0:
-                        convert_deque.popleft()
                     visited[i] = 1
                     convert_deque.append(words[i])
         answer +=1
     return answer
 
-print(solution('hit', 'cog', ['hot', 'dot', 'dog', 'lot', 'log']))
+print(solution('hit', 'cog', ['hot', 'dot', 'dog', 'lot', 'log', 'cog']))
