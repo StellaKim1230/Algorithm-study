@@ -16,6 +16,7 @@ def person_is_seller(name):
 def search(name):
   search_queue = deque()
   search_queue += graph[name]
+  print(search_queue.popleft())
   searched = []
   while search_queue:
     person = search_queue.popleft()
