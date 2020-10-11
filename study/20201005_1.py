@@ -26,4 +26,28 @@ def solution(begin, target, words):
         answer +=1
     return answer
 
-print(solution('hit', 'cog', ['hot', 'dot', 'dog', 'lot', 'log', 'cog']))
+
+# review
+from collections import deque
+
+def solution(begin, target, words):
+    if target not in words:
+        return 0
+    
+    convert_deque = deque([(begin, 0)])
+    visited = [False for i in words]
+    answer = 0
+
+    while convert_deque:
+        word, count = convert_deque.popleft()
+        if word == target:
+            return count
+
+        for i in range(len(words)):
+            is_change = len([j for j in range(len(words[i])) if words[i][j] != word[j]])
+            if is_change == 1 and not visited[i]:
+                visited[i] = True
+                convert_deque.append((words[i], count + 1))
+        answer += 1
+        
+    return answer

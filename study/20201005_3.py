@@ -54,4 +54,27 @@ def solution(maps):
                     else: return -1
     return answer +1
 
-print(solution(maps1))
+# review
+from collections import deque
+
+def solution(maps):
+    n = len(maps)
+    m = len(maps[0])
+    bfs_queue = deque([(0, 0, 1)])
+    
+    directions = [(0, 1), (0, -1), (1, 0), (-1, 0)]
+    maps[0][0] = 0
+    while bfs_queue:
+        y, x, count = bfs_queue.popleft()
+        
+        if y == n - 1 and x == m - 1:
+            return count
+        
+        for dy, dx in directions:
+            ny, nx = y + dy, x + dx
+            
+            if 0 <= nx < m and 0 <= ny < n and maps[ny][nx] == 1:
+                maps[ny][nx] = 0
+                bfs_queue.append((ny, nx, count + 1))
+
+    return -1
